@@ -10,12 +10,10 @@ export class CreateUsers1614228450238 implements MigrationInterface {
                     type: "uuid",
                     isPrimary: true
                 },
-
                 {
                     name: "name",
                     type: "varchar"
                 },
-
                 {
                     name: "email",
                     type: "varchar"
