@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, request } from 'express';
 import { getCustomRepository } from 'typeorm';
 import { UsersRepository } from '../repositories/UsersRepository';
 
@@ -24,6 +24,14 @@ class UserController {
         await userRepository.save(user);
         return response.json(user);
     }
+
+    async show(request: Request, response: Response) {
+        const userRepository = getCustomRepository(UsersRepository);
+
+        const lista = await userRepository.find();
+
+        return response.json(lista);
+    };
 }
 
 export { UserController };
