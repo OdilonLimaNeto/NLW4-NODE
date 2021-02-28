@@ -19,5 +19,15 @@ it('Should be able to create a new user', async () => {
         expect(response.status).toBe(201)
     });
 
+it('Should not be able to create a user with exists email', async () => {
+    const response = await request(app).post('/users')
+        .send({
+            email: 'odilonlima@gmail.com',
+            name: 'Odilon Lima'
+        });
+
+        expect(response.status).toBe(400)
 });
+
+})
 
