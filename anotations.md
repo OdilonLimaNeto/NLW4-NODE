@@ -17,3 +17,16 @@ configurações do jest.config.ts:
         "**/__tests__/*.test.ts"  // onde irá ler todos os arquivos com final tests.ts.
 
   ],
+
+
+  USO DE FOREIGNKEYS
+
+  foreignKeys: [
+                    {
+                        name: 'FKUser',
+                        referencedTableName: 'users', // qual tabela a FK está sendo referenciada?
+                        referencedColumnNames: ['id'], // Qual coluna da tabela está sendo referenciada?
+                        columnNames: ['user_id'],
+                        onDelete: 'CASCADE',
+                        onUpdate: 'CASCADE'
+                    },
